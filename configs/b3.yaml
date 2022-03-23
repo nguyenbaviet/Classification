@@ -1,0 +1,35 @@
+EXPERIMENT: "b3"
+
+SYSTEM:
+  NUM_WORKERS: 8
+
+DIRS:
+  # DATA: "data"
+  DATA: "/home/huyphan1/viet/liveness"
+  LOGS: "logs"
+  WEIGHTS: "weights"
+
+MODEL:
+  NAME: "CustomEffNet"
+  NUM_CLASSES: 5
+
+  BACKBONE:
+    ARCH: "tf_efficientnet_b3_ns"
+
+TRAIN:
+  BATCH_SIZE: 48
+  EPOCHS: 20
+
+OPT:
+  OPTIMIZER: "adamw"
+  WEIGHT_DECAY: 1e-4
+  BASE_LR: 8e-4
+  BACKBONE_LR: 8e-4
+  WARMUP_EPOCHS: 2
+
+DATA:
+  HEIGHT: 300
+  WIDTH: 300
+  CUTOUT: False
+
+  INTERP: 2

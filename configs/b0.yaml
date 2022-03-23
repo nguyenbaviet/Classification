@@ -1,0 +1,36 @@
+EXPERIMENT: "b0"
+
+SYSTEM:
+  NUM_WORKERS: 8
+
+DIRS:
+  # DATA: "data"
+  DATA: "/home/huyphan1/quang/occlusion/faces"
+  LOGS: "logs"
+  WEIGHTS: "weights"
+
+MODEL:
+  NAME: "CustomEffNet"
+
+  NUM_CLASSES: 6
+
+  BACKBONE:
+    ARCH: "tf_efficientnet_b0_ns"
+
+TRAIN:
+  BATCH_SIZE: 128
+  EPOCHS: 20
+
+OPT:
+  OPTIMIZER: "adamw"
+  WEIGHT_DECAY: 1e-4
+  BASE_LR: 5e-4
+  BACKBONE_LR: 5e-4
+  WARMUP_EPOCHS: 2
+
+DATA:
+  HEIGHT: 224
+  WIDTH: 224
+  CUTOUT: False
+
+  INTERP: 2
